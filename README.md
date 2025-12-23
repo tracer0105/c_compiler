@@ -197,5 +197,5 @@ make test_main
 
 ### 清理编译产物
 ```bash
-make test_main
+make clean
 ```
