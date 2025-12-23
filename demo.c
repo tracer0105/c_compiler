@@ -25,7 +25,7 @@ void demo_symbol_table() {
         printf("✓ 插入并查找全局变量 'global_var': %s\n", type_to_string(global_var->type));
     }
     
-    // 进入函数作用域
+    // 进入函数作用域   
     printf("\n[进入函数作用域]\n");
     symbol_table_enter_scope(table);
     

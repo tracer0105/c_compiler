@@ -1,10 +1,10 @@
-# C编译器 - 符号表与语义分析增强版
+# C编译器前端实现
 
 ## 项目概述
 
-本项目是一个C语言编译器的前端实现,包含词法分析、语法分析、符号表管理、类型检查和语义分析等核心功能。
+本项目是一个C语言编译器的前端实现,包含词法分析、语法分析、符号表管理、类型检查和语义分析等核心功能。为编译原理课程作业
 
-## 新增功能
+## 部分功能
 
 ### 1. 完善的符号表系统 (`symbol_table.h/c`)
 
@@ -166,27 +166,36 @@ float c = a + b;  // a隐式转换为float, 结果为float
 
 ```
 c_compiler/
-├── lexer.h/c           # 词法分析器(原有)
-├── parser.h/c          # 语法分析器(原有)
-├── ast.h/c             # AST和类型系统(新增)
-├── symbol_table.h/c    # 符号表(新增)
-├── type_checker.h/c    # 类型检查器(新增)
-├── semantic_analyzer.h/c # 语义分析器(新增)
+├── lexer.h/c           # 词法分析器
+├── parser.h/c          # 语法分析器
+├── ast.h/c             # AST和类型系统
+├── symbol_table.h/c    # 符号表
+├── type_checker.h/c    # 类型检查器
+├── semantic_analyzer.h/c # 语义分析器
 ├── test_main.c         # 单元测试
 ├── demo.c              # 功能演示程序
-└── README_NEW.md       # 本文档
+└── README.md           # 本文档
 ```
 
 ## 编译和运行
 
-### 编译测试程序
+### 编译所有目标
 ```bash
-gcc -Wall -g -std=c11 -o test_compiler test_main.c ast.c symbol_table.c type_checker.c semantic_analyzer.c
-./test_compiler
+make
 ```
 
-### 编译演示程序
+
+### 编译demo
 ```bash
-gcc -Wall -g -std=c11 -o demo demo.c ast.c symbol_table.c type_checker.c semantic_analyzer.c
-./demo
+make demo
 ```
+
+### 编译test_main
+```bash
+make test_main
+```
+
+### 清理编译产物
+'''bash
+make clean
+'''
